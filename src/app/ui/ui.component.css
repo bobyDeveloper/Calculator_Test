@@ -1,36 +1,61 @@
 .calculator {
-    width: 150px;
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: #999;
 }
 
-.result {
-    font-size: 3.0em;
+.input-group {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 1em;
+    text-align: right;
+}
+
+/* Estilos para los resultados de cada operación */
+.result,
+.square-root-result,
+.multiplication-result, /* Agregado para el resultado de la multiplicación */
+.division-result,       /* Agregado para el resultado de la división */
+.power-result,
+.percentage-result {
+    margin: 5px 0;
+    color: #333;
     font-weight: bold;
-    color: red;
-
+    min-height: 1.5em; /* Asegura que el contenedor del resultado tenga altura incluso si está vacío */
 }
 
-.operator1 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: black;
-
+.button-row {
+    margin-bottom: 15px;
 }
 
-.operator2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: blue;
-
-}
-
-.addition-button {
+.operation-button {
+    /* Se ajustó el ancho para acomodar el botón y el resultado en la misma fila */
+    width: calc(50% - 4px); 
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 5px;
+    border: none;
     cursor: pointer;
-    color: blue;
-}
-.substraction-button {
-    cursor: pointer;
-    color: green;
+    color: white;
 }
 
+.addition-button { background-color: #28a745; }
+.substraction-button { background-color: #dc3545; }
+.multiply-button { background-color: #007bff; }
+.divide-button { background-color: #ffc107; }
+.square-root-button { background-color: #17a2b8; }
+.power-button { background-color: #6f42c1; }
+.percentage-button { background-color: #fd7e14; }
+
+.operation-button:hover {
+    opacity: 0.8;
+}
