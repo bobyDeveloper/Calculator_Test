@@ -1,45 +1,15 @@
-import { division } from "./division"
+import { division } from './division';
 
 describe('division unit tests', () => {
-    
-    it('Should divide 2 / 2 = 1', () => {
-        // Pattern AAA (Arrange - Act - Assert)
+    it('should divide 10 / 2 to equal 5', () => {
+        expect(division(10, 2)).toBe(5);
+    });
 
-        // Arrange
-        let result = 0;
-        
-        // Act
-        result = division(2, 2);
+    it('should divide -10 / 2 to equal -5', () => {
+        expect(division(-10, 2)).toBe(-5);
+    });
 
-        // Assert
-        expect(result).toBe(1);
-    })
-
-    it('Should divide 9 / 2 = 4.5', () => {
-        // Arrange
-        let result = 0;
-        // Act
-        result = division(9, 2);
-        // Assert
-        expect(result).toBe(4.5);
-    })
-
-    it('Should divide 3.0 / 0.5 = 6.0', () => {
-        // Arrange
-        let result = 0;
-        // Act
-        result = division(3.0, 0.5);
-        // Assert
-        expect(result).toBe(6.0);
-    })
-
-    it(' Should divide 0 / 1 = 0', () => {
-        // Arrange
-        let result = 0;
-        // Act
-        result = division(0, 1);
-        // Assert
-        expect(result).toBe(0);
-    })
-
-})
+    it('should throw an error for division by zero', () => {
+        expect(() => { division(10, 0) }).toThrowError("Cannot divide by zero");
+    });
+});

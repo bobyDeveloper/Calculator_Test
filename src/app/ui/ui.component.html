@@ -1,23 +1,50 @@
 <div class="calculator">
+    <!-- Inputs para operaciones básicas y sus resultados -->
+    <div class="input-group">
+        <input id="operator1" [(ngModel)]="operator1" type="number" class="form-control" placeholder="Enter number" />
+        <input id="operator2" [(ngModel)]="operator2" type="number" class="form-control" placeholder="Enter number" />
+    </div>
+    
+    <div class="button-row">
+        <button class="btn operation-button addition-button" (click)="addition()">+</button>
+        <span class="result addition-result">{{ result }}</span>
+    </div>
 
-    <form>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span> 
-            <input id="operator1" [(ngModel)]="operator1" type="number" class="form-control operator1" name="operator1" placeholder="0.0">
-        </div>
+    <div class="button-row">
+        <button class="btn operation-button substraction-button" (click)="substraction()">-</button>
+        <span class="result substraction-result">{{ result }}</span>
+    </div>
 
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            <input id="operator2" [(ngModel)]="operator2" type="number" class="form-control operator2" name="operator2" placeholder="0.0">
-        </div>
-    </form>
+    <div class="button-row">
+        <button class="btn operation-button multiply-button" (click)="multiply()">*</button>
+        <span class="result multiplication-result">{{ multiplicationResult }}</span>
+    </div>
 
-    <i class="glyphicon glyphicon-plus addition-button"
-        (click)="addition()"></i>
+    <div class="button-row">
+        <button class="btn operation-button divide-button" (click)="divide()">/</button>
+        <span class="result division-result">{{ divisionResult }}</span>
+    </div>
 
-    <i class="glyphicon glyphicon-minus substraction-button"
-        (click)="substraction()"></i>
+    <!-- Input y resultado para la raíz cuadrada -->
+    <div class="input-group">
+        <input id="numberForSquareRoot" [(ngModel)]="numberForSquareRoot" type="number" class="form-control" placeholder="√" />
+        <button class="btn operation-button square-root-button" (click)="calculateSquareRoot()">√</button>
+        <span class="result square-root-result">{{ squareRootResult }}</span>
+    </div>
 
+    <!-- Inputs y resultado para la potencia -->
+    <div class="input-group">
+        <input [(ngModel)]="base" type="number" class="form-control" placeholder="Base" />
+        <input [(ngModel)]="exponent" type="number" class="form-control" placeholder="Exponent" />
+        <button class="btn operation-button power-button" (click)="calculatePower()">^</button>
+        <span class="result power-result">{{ powerResult }}</span>
+    </div>
+
+    <!-- Inputs y resultado para el porcentaje -->
+    <div class="input-group">
+        <input [(ngModel)]="total" type="number" class="form-control" placeholder="Total" />
+        <input [(ngModel)]="percent" type="number" class="form-control" placeholder="%" />
+        <button class="btn operation-button percentage-button" (click)="calculatePercentage()">%</button>
+        <span class="result percentage-result">{{ percentageResult }}</span>
+    </div>
 </div>
-
-<span class="result">{{ result }}</span>
